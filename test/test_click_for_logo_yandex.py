@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from pages.main_page.main_page import LogoTesting
@@ -5,6 +6,7 @@ from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
 class Test:
+    @allure.title('Переход в dzen, через логотип Яндекс')
     # Проверяем открытие сайта dzen, после клика на кнопку Яндекс
     def test_jump_after_click_logo_yandex(self, driver):
         logo_button = LogoTesting(driver)

@@ -1,9 +1,12 @@
+import allure
+
 from pages.main_page.main_page import MainPageQuestions
 from pages.base_page import BasePage
 
 
 
 class Test:
+    @allure.title('После открытия первого ответа, отображается ожидаемый')
     # Проверяем открытие отображаемого ответа в вопросе
     def test_question_one(self, driver):
         main_page = MainPageQuestions(driver)

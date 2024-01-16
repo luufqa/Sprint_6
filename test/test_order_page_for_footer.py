@@ -1,3 +1,5 @@
+import allure
+
 from pages.order_page.order_page import OrderPage
 from pages.base_page import BasePage
 import pytest
@@ -6,6 +8,7 @@ from pages.user_two import UserTwo
 
 
 class Test:
+    @allure.title('Оформление нового товара через кнопку Заказать в футере')
     # Подставляем две разные учетки пользователя - с разными данными
     @pytest.mark.parametrize('first_name, last_name, address, st_subway, phone, date, comment, expected_result',
                              [(UserOne.first_name, UserOne.last_name, UserOne.address, UserOne.st_subway, UserOne.phone,
