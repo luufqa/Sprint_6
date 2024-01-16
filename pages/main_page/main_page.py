@@ -4,17 +4,14 @@ from selenium.webdriver.support import expected_conditions as EC
 from locators.main_page_locators import Locators
 from pages.base_page import BasePage
 from pages.check_cookie import CheckCookie
-import allure
 
 
 # Логотипы на главной странице
 class LogoTesting(BasePage):
     # Кликаем по логотипу Самокат
-    @allure.step('Клик по логотипу Самокат')
     def jump_after_click_logo_car(self, driver):
         driver.find_element(By.XPATH, Locators.logo_car).click()
 
-    @allure.step('Клик по логотипу Самокат')
     # Кликаем по логотипу Яндекс
     def jump_after_click_logo_yandex(self, driver):
         driver.find_element(By.XPATH, Locators.logo_yandex).click()
@@ -23,7 +20,6 @@ class LogoTesting(BasePage):
 # Вопросы на главной странице
 class MainPageQuestions(BasePage):
     # Вопрос первый: Сколько это стоит? И как оплатить?
-    @allure.step('Возврат значения ответа первого вопроса')
     def question_one(self, driver):
         # Функция проверки наличия кнопки куки, если присутствует - кликаем
         chk_cookie = CheckCookie(driver)
@@ -39,7 +35,6 @@ class MainPageQuestions(BasePage):
         # Возвращаем ответ на вопрос
         return answer
 
-    @allure.step('Возврат значения ответа второго вопроса')
     # Вопрос второй: Хочу сразу несколько самокатов! Так можно?
     def question_two(self, driver):
         # Функция проверки наличия кнопки куки, если присутствует - кликаем
@@ -58,7 +53,6 @@ class MainPageQuestions(BasePage):
         # Возвращаем ответ на вопрос
         return answer
 
-    @allure.step('Возврат значения ответа третьего вопроса')
     # Вопрос третий: Как рассчитывается время аренды?
     def question_three(self, driver):
         # Функция проверки наличия кнопки куки, если присутствует - кликаем
@@ -77,7 +71,6 @@ class MainPageQuestions(BasePage):
         # Возвращаем ответ на вопрос
         return answer
 
-    @allure.step('Возврат значения ответа четвертого вопроса')
     # Вопрос четвертый: Можно ли заказать самокат прямо на сегодня?
     def question_four(self, driver):
         # Функция проверки наличия кнопки куки, если присутствует - кликаем
@@ -96,7 +89,6 @@ class MainPageQuestions(BasePage):
         # Возвращаем ответ на вопрос
         return answer
 
-    @allure.step('Возврат значения ответа пятого вопроса')
     # Вопрос пятый: Можно ли продлить заказ или вернуть самокат раньше?
     def question_five(self, driver):
         # Функция проверки наличия кнопки куки, если присутствует - кликаем
@@ -115,7 +107,6 @@ class MainPageQuestions(BasePage):
         # Возвращаем ответ на вопрос
         return answer
 
-    @allure.step('Возврат значения ответа шестого вопроса')
     # Вопрос шестой: Вы привозите зарядку вместе с самокатом?
     def question_six(self, driver):
         # Функция проверки наличия кнопки куки, если присутствует - кликаем
@@ -134,7 +125,6 @@ class MainPageQuestions(BasePage):
         # Возвращаем ответ на вопрос
         return answer
 
-    @allure.step('Возврат значения ответа седьмого вопроса')
     # Вопрос седьмой: Можно ли отменить заказ?
     def question_seven(self, driver):
         # Функция проверки наличия кнопки куки, если присутствует - кликаем
@@ -152,7 +142,6 @@ class MainPageQuestions(BasePage):
         answer = self.driver.find_element(By.ID, Locators.answer_question_seven).text
         return answer
 
-    @allure.step('Возврат значения ответа восьмого вопроса')
     # Вопрос Восьмой: Я жизу за МКАДом, привезёте?
     def question_eight(self, driver):
         # Функция проверки наличия кнопки куки, если присутствует - кликаем

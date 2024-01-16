@@ -1,4 +1,3 @@
-import allure
 from selenium.webdriver.common.by import By
 from locators.order_page_locators import Locators
 from selenium.webdriver.common.keys import Keys
@@ -6,7 +5,6 @@ from pages.base_page import BasePage
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from pages.check_cookie import CheckCookie
-import allure
 
 
 # Страница оформления заказа
@@ -22,7 +20,6 @@ class OrderPage(BasePage):
         self.date = date
         self.comment = comment
     # Оформление заказа через кнопку Заказать - в шапке сайта
-    @allure.step('Открытие формы заказа, через кнопку "Заказ" в шапке')
     def order_for_header(self, driver):
         # Функция проверки наличия кнопки куки, если присутствует - кликаем
         chk_cookie = CheckCookie(driver)
@@ -34,7 +31,6 @@ class OrderPage(BasePage):
         driver.find_element(By.XPATH, Locators.order_button_in_header).click()
 
     # Оформление заказа через кнопку Заказать - в футере сайта
-    @allure.step('Открытие формы заказа, через кнопку "Заказ" в футере')
     def order_for_footer(self, driver):
         # Функция проверки наличия кнопки куки, если присутствует - кликаем
         chk_cookie = CheckCookie(driver)
@@ -45,7 +41,6 @@ class OrderPage(BasePage):
         # Кликаем по найденной кнопке Заказать в шапке
         driver.find_element(By.XPATH, Locators.order_button_in_footer).click()
     # Процедура оформления заказа по заданным аккаунтам  из параметризации
-    @allure.step('Оформление заказа по заданным учеткам пользователей')
     def order_car(self, driver):
         driver.find_element(By.XPATH, Locators.order_button_in_header).click()
         driver.find_element(By.XPATH, Locators.first_name_field).send_keys(self.first_name)
