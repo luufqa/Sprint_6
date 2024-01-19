@@ -1,7 +1,5 @@
 from selenium.webdriver.common.by import By
 
-
-# Локаторы для главной страницы - main_page.py
 class Locators:
     question_one_button = (By.ID, "accordion__heading-0")
     answer_question_one = (By.ID, "accordion__panel-0")

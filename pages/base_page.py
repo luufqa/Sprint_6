@@ -3,12 +3,10 @@ from selenium.webdriver.support.wait import WebDriverWait
 from locators.main_page_locators import Locators
 
 
-# Общий класс
 class BasePage:
     def __init__(self, driver):
         self.driver = driver
 
-    # Переход на заданный url
     def go_to_site(self, url):
         return self.driver.get(url)
 
@@ -34,7 +32,6 @@ class BasePage:
         window_after = self.driver.window_handles[1]
         return self.driver.switch_to.window(window_after)
 
-    # Функция проверки наличия кнопки куки, если присутствует - кликаем
     def check_cookie(self):
         cookie = self.find_element_located(Locators.cookie_message)
         if cookie:

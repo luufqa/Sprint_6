@@ -25,11 +25,9 @@ class TestMainQuestions:
                                'Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не попросим. Все же свои.'),
                               (Locators.question_eight_button, Locators.answer_question_eight,
                                'Да, обязательно. Всем самокатов! И Москве, и Московской области.')])
-    # Проверяем открытие отображаемого ответа в вопросе
     def test_questions(self, button, answer, expected_result, driver):
         main_page = MainPageQuestions(driver)
         base_page = BasePage(driver)
         base_page.go_to_site("https://qa-scooter.praktikum-services.ru/")
         get_answer = main_page.main_page_questions(button, answer)
-        # Проверка, что после открытия ответа, отображается ожидаемый
         assert get_answer == expected_result

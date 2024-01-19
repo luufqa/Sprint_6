@@ -1,7 +1,6 @@
 from selenium.webdriver.common.by import By
 
 
-# Локаторы для оформления заказа - order_page.py
 class Locators:
     order_button_in_header = (By.XPATH, ".//button[contains(@class, 'Button_Button__ra12g') and text()='Заказать']")
     order_button_in_footer = (By.XPATH, ".//button[@class='Button_Button__ra12g Button_Middle__1CSJM']")
